@@ -1,17 +1,29 @@
-from fastapi import FastAPI
+import mlflow.pyfunc
+import logging
+from fastapi import FastAPI, HTTPException
 import pandas as pd
-import pickle
 from pydantic import BaseModel
 
 # Initialize FastAPI app
 app = FastAPI()
 
-# Load the trained model correctly
-with open("knn_model.pkl", "rb") as file:
-    model = pickle.load(file)
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-# Debug: Print model type
-print(f"Model loaded: {type(model)}")  # Should be a scikit-learn model
+# Set MLflow Tracking URI
+MLFLOW_TRACKING_URI = "http://127.0.0.1:5000/:5000" 
+mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+
+# Load the trained model from MLflow
+MODEL_URI = "models:/DiabetesModel/Production"
+
+try:
+    model = mlflow.pyfunc.load_model(MODEL_URI)
+    logger.info(f"✅ Model loaded successfully from MLflow ({MODEL_URI})!")
+except Exception as e:
+    logger.error(f"❌ Error loading model from MLflow: {e}")
+    model = None  # Set model to None to avoid crashes
 
 # Define input schema
 class DiabetesInput(BaseModel):
@@ -32,15 +44,13 @@ def read_root():
 # Prediction endpoint
 @app.post("/predict/")
 def predict(data: DiabetesInput):
-    df = pd.DataFrame([data.dict()])  # Convert input to DataFrame
-    feature_names = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", 
-                     "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
-    df = df[feature_names]  # Ensure correct column order
+    if model is None:
+        raise HTTPException(status_code=500, detail="Model not loaded. Please check MLflow model registry.")
 
-    # Check if model is correct before prediction
-    if not hasattr(model, "predict"):
-        return {"error": "Model not loaded correctly. Please check knn_model.pkl"}
+    # Convert input to DataFrame
+    df = pd.DataFrame([data.dict()])
 
     # Make prediction
     prediction = model.predict(df)[0]
+
     return {"prediction": int(prediction)}

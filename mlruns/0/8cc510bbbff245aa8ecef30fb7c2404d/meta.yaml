@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/8cc510bbbff245aa8ecef30fb7c2404d/artifacts
+end_time: 1741106133452
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8cc510bbbff245aa8ecef30fb7c2404d
+run_name: funny-doe-810
+run_uuid: 8cc510bbbff245aa8ecef30fb7c2404d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741106127810
+status: 4
+tags: []
+user_id: reygarcia

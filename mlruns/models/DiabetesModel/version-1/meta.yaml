@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1741109110796
+current_stage: Production
+description: ''
+last_updated_timestamp: 1741109157656
+name: DiabetesModel
+run_id: 7cc643528e3b40c6b129d8d0e16897e1
+run_link: ''
+source: mlflow-artifacts:/0/7cc643528e3b40c6b129d8d0e16897e1/artifacts/knn_model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/7cc643528e3b40c6b129d8d0e16897e1/artifacts/knn_model
+user_id: null
+version: 1

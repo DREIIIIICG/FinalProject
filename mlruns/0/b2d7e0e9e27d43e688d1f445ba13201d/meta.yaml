@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/b2d7e0e9e27d43e688d1f445ba13201d/artifacts
+end_time: 1741107730162
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b2d7e0e9e27d43e688d1f445ba13201d
+run_name: brawny-chimp-122
+run_uuid: b2d7e0e9e27d43e688d1f445ba13201d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741107720182
+status: 3
+tags: []
+user_id: reygarcia

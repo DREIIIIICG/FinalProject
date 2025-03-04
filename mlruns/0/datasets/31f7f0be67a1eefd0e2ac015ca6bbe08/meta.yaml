@@ -1,0 +1,10 @@
+digest: 9744471b
+name: dataset
+profile: '{"num_rows": 614, "num_elements": 4912}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "0"}, {"type": "double", "name":
+  "1"}, {"type": "double", "name": "2"}, {"type": "double", "name": "3"}, {"type":
+  "double", "name": "4"}, {"type": "double", "name": "5"}, {"type": "double", "name":
+  "6"}, {"type": "double", "name": "7"}]}'
+source: '{"tags": {"mlflow.user": "reygarcia", "mlflow.source.name": "mlflow_tracking.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

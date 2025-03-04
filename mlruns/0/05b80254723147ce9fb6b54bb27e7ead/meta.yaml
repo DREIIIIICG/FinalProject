@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/05b80254723147ce9fb6b54bb27e7ead/artifacts
+end_time: 1741110372652
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 05b80254723147ce9fb6b54bb27e7ead
+run_name: mercurial-cod-241
+run_uuid: 05b80254723147ce9fb6b54bb27e7ead
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741110367246
+status: 4
+tags: []
+user_id: reygarcia

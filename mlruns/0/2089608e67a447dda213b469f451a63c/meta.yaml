@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/2089608e67a447dda213b469f451a63c/artifacts
+end_time: 1741105704763
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2089608e67a447dda213b469f451a63c
+run_name: sassy-quail-282
+run_uuid: 2089608e67a447dda213b469f451a63c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741105699543
+status: 4
+tags: []
+user_id: reygarcia

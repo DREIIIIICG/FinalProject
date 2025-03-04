@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/7cc643528e3b40c6b129d8d0e16897e1/artifacts
+end_time: 1741109110831
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7cc643528e3b40c6b129d8d0e16897e1
+run_name: gifted-panda-137
+run_uuid: 7cc643528e3b40c6b129d8d0e16897e1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741109101146
+status: 3
+tags: []
+user_id: reygarcia

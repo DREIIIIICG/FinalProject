@@ -1,0 +1,12 @@
+digest: 9b2054ad
+name: dataset
+profile: '{"num_rows": 154, "num_elements": 1232}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": 0, "required": true}, {"type":
+  "double", "name": 1, "required": true}, {"type": "double", "name": 2, "required":
+  true}, {"type": "double", "name": 3, "required": true}, {"type": "double", "name":
+  4, "required": true}, {"type": "double", "name": 5, "required": true}, {"type":
+  "double", "name": 6, "required": true}, {"type": "double", "name": 7, "required":
+  true}]}'
+source: '{"tags": {"mlflow.user": "reygarcia", "mlflow.source.name": "c:/diabetes-mlops/mlflow_tracking.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

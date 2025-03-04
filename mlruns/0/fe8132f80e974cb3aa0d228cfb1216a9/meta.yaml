@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/fe8132f80e974cb3aa0d228cfb1216a9/artifacts
+end_time: 1741111126564
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fe8132f80e974cb3aa0d228cfb1216a9
+run_name: monumental-auk-95
+run_uuid: fe8132f80e974cb3aa0d228cfb1216a9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741111117718
+status: 3
+tags: []
+user_id: reygarcia
