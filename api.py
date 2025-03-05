@@ -11,12 +11,12 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Set MLflow Tracking URI
-MLFLOW_TRACKING_URI = "http://127.0.0.1:5000/:5000" 
+# Corrected MLflow Tracking URI
+MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"  # ✅ Fixed
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
 # Load the trained model from MLflow
-MODEL_URI = "models:/DiabetesModel/Production"
+MODEL_URI = "models:/DiabetesModel/Production"  # Automatically fetch latest production model
 
 try:
     model = mlflow.pyfunc.load_model(MODEL_URI)
