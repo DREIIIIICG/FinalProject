@@ -19,7 +19,7 @@ def preprocess_data(input_file: str, output_file: str = "processed_data.csv"):
 
     # Save processed data
     ds.to_csv(output_file, index=False)
-    print("✅ Data Preprocessing Completed")
+    print("Data Preprocessing Completed")
 
 if __name__ == "__main__":
     preprocess_data("diabetes.csv")

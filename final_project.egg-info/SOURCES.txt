@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+final_project/__init__.py
+final_project/assets.py
+final_project/dagster_pipeline.py
+final_project/definitions.py
+final_project/repository.py
+final_project/setup.py
+final_project.egg-info/PKG-INFO
+final_project.egg-info/SOURCES.txt
+final_project.egg-info/dependency_links.txt
+final_project.egg-info/requires.txt
+final_project.egg-info/top_level.txt

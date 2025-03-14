@@ -13,15 +13,15 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000")
 mlflow.sklearn.autolog()
 
 # Load dataset
-X = pd.read_csv("scaled_features.csv", skiprows=1, header=None)  # Skip first row (feature names)
+X = pd.read_csv("scaled_features.csv", skiprows=1, header=None)  
 y = pd.read_csv("labels.csv")
 
 # Convert labels to integers
 y = y.astype(int)
 
 # Verify dataset shapes
-print("✅ Features shape:", X.shape)
-print("✅ Labels shape:", y.shape)
+print("Features shape:", X.shape)
+print("Labels shape:", y.shape)
 
 # Split dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
@@ -49,7 +49,7 @@ with mlflow.start_run():
     print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
     print("F1 Score:", f1)
     print("Accuracy:", accuracy)
-    print("✅ Model and metrics logged with MLflow!")
+    print("Model and metrics logged with MLflow!")
 
 # Verify registered models
 from mlflow.tracking import MlflowClient

@@ -11,19 +11,19 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Corrected MLflow Tracking URI
-MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"  # ✅ Fixed
+# MLflow Tracking URI
+MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"  
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
 # Load the trained model from MLflow
-MODEL_URI = "models:/DiabetesModel/Production"  # Automatically fetch latest production model
+MODEL_URI = "models:/DiabetesModel/1"  
 
 try:
     model = mlflow.pyfunc.load_model(MODEL_URI)
-    logger.info(f"✅ Model loaded successfully from MLflow ({MODEL_URI})!")
+    logger.info(f"Model loaded successfully from MLflow ({MODEL_URI})!")
 except Exception as e:
-    logger.error(f"❌ Error loading model from MLflow: {e}")
-    model = None  # Set model to None to avoid crashes
+    logger.error(f"Error loading model from MLflow: {e}")
+    model = None  
 
 # Define input schema
 class DiabetesInput(BaseModel):
@@ -48,7 +48,14 @@ def predict(data: DiabetesInput):
         raise HTTPException(status_code=500, detail="Model not loaded. Please check MLflow model registry.")
 
     # Convert input to DataFrame
+    #df = pd.DataFrame([data.dict()])
     df = pd.DataFrame([data.dict()])
+
+    feature_order = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin",
+                 "BMI", "DiabetesPedigreeFunction", "Age"]
+
+    df = df[feature_order] 
+   
 
     # Make prediction
     prediction = model.predict(df)[0]

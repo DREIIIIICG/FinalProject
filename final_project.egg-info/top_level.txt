@@ -1,0 +1,4 @@
+final_project
+mlartifacts
+mlruns
+venv
